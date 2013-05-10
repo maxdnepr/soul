@@ -1,0 +1,16 @@
+{application, soul,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  cowboy
+                 ]},
+  {mod, { soul_app, []}},
+  {env, [
+        {port, 8080},
+        {nb_acceptors, 100}
+    ]}
+ ]}.
