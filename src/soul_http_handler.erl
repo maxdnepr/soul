@@ -2,10 +2,13 @@
 
 -type method() :: <<>>.
 -type path() :: any().
--type body() :: <<>>.
+-type tmpl() :: any().
+-type name() :: atom().
+-type values() :: list().
+-type options() :: list().
 
 -callback handle(method(), path()) ->
-    body() | {atom(), body()}.
+    {tmpl(), name(), values()} | {tmpl(), name(), values(), options()}.
     
 
 
