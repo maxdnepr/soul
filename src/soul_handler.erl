@@ -14,10 +14,10 @@ execute(Req, Env) ->
 
 handler_handle(Handler, Method, Path) ->
     try Handler:handle(Method, Path) of
-        {Tmpl, Name, Values} ->
-            soul_tmpl:dtl(Tmpl, Name, Values);
-        {Tmpl, Name, Values, Options} ->
-            soul_tmpl:dtl(Tmpl, Name, Values, Options);
+        {Tmpl, Values} ->
+            soul_tmpl:dtl(Tmpl, Values);
+        {Tmpl, Values, Options} ->
+            soul_tmpl:dtl(Tmpl, Values, Options);
         Reason ->
             {error, Reason}
     catch 
